@@ -36,7 +36,7 @@
         <select name="status" class="form-control">
             <option value="">All</option>
             <option value="active" @selected(request('status') == 'active') >Active</option>
-            <option value="active" @selected(request('status') == 'draft') >Draft</option>
+            <option value="draft" @selected(request('status') == 'draft') >Draft</option>
             <option value="archived" @selected(request('status') == 'archived') >Archived</option>
         </select>
         <button type="submit" class="btn btn-primary">Filter</button>

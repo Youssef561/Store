@@ -1,140 +1,99 @@
 @extends('layout/dashboard');
 
-@section('title','Products')
+@section('title','Edit Product')
 
 @section('breadcrumb')
     @parent
-    <li class="breadcrumb-item active" aria-current="page">Products</li>
+    <li class="breadcrumb-item active" aria-current="page">Edit</li>
 @endsection
 
 @section('content')
 
-    <div class="mb-4 d-flex justify-content-between align-items-center">
-        <a href="{{ route('dashboard.products.create') }}" class="btn btn-primary">
-            <i class="bi bi-plus-circle"></i> Create Product
-        </a>
+    {{-- show errors --}}
+    <x-alert />
 
-        <a href="{{ route('products.trash') }}" class="btn btn-danger">
-            <i class="bi bi-trash"></i> Trash
-        </a>
 
-    </div>
+    <form method="POST" action="{{ route('dashboard.products.update',$product->id) }}" enctype="multipart/form-data" class="p-4 border rounded shadow-sm bg-white">
+        @csrf
+        @method('put')
+        <h4 class="mb-4">Update the Product</h4>
 
-    {{-- this alert for success message--}}
-    <x-alert/>
+        {{-- Product Name --}}
+        <div class="mb-3">
+            <label for="name" class="form-label">Product Name</label>
+            <input type="text" name="name" id="name" class="form-control" value="{{ old('name', $product->name) }}" required>
+        </div>
 
-    {{-- for search --}}
-    <form action="{{ URL::current() }}" method="GET" class="d-flex mb-3" role="search">
-        <input
-            type="text"
-            name="name"
-            value="{{ request('name') }}"
-            class="form-control me-2"
-            placeholder="Search..."
-            aria-label="Search"
-        >
-        <select name="status" class="form-control">
-            <option value="">All</option>
-            <option value="active" @selected(request('status') == 'active') >Active</option>
-            <option value="active" @selected(request('status') == 'draft') >Draft</option>
-            <option value="archived" @selected(request('status') == 'archived') >Archived</option>
-        </select>
-        <button type="submit" class="btn btn-primary">Filter</button>
+        {{-- Parent Category --}}
+        <div class="mb-3">
+            <label for="category_id" class="form-label">Category</label>
+            <select name="category_id" id="category_id" class="form-select">
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}" {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}>
+                        {{ $category->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        {{-- Description --}}
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" id="description" rows="4" class="form-control">{{ old('description', $product->description) }}</textarea>
+        </div>
+
+        {{-- Product Price --}}
+        <div class="mb-3">
+            <label for="name" class="form-label">Product Price</label>
+            <input type="text" name="price" id="price" class="form-control" value="{{ old('price', $product->price) }}" required>
+        </div>
+
+        {{-- Product Compare Price --}}
+        <div class="mb-3">
+            <label for="name" class="form-label">Product Compare Price</label>
+            <input type="text" name="compare_price" id="c_price" class="form-control" value="{{ old('c_price', $product->compare_price) }}" required>
+        </div>
+
+        {{-- Image --}}
+        <div class="mb-3">
+            <label for="image" class="form-label">Product Image</label>
+            <input type="file" name="image" id="image" class="form-control">
+        </div>
+
+        {{-- Product Tags --}}
+        <div class="mb-3">
+            <label for="name" class="form-label">Product Tags</label>
+            <input type="text" name="tags" id="tags" class="form-control" value="{{ old('tags',$tags) }}" required>
+        </div>
+
+        {{-- Status --}}
+        <div class="mb-4">
+            <label class="form-label d-block">Status</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="status" id="statusActive" value="active"
+                    {{ old('status', $product->status) == 'active' ? 'checked' : '' }}>
+                <label class="form-check-label" for="statusActive">Active</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="status" id="statusDraft" value="draft"
+                    {{ old('status', $product->status) == 'draft' ? 'checked' : '' }}>
+                <label class="form-check-label" for="statusDraft">Draft</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="status" id="statusArchived" value="archived"
+                    {{ old('status', $product->status) == 'archived' ? 'checked' : '' }}>
+                <label class="form-check-label" for="statusArchived">Archived</label>
+            </div>
+        </div>
+
+        {{-- Submit --}}
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Update Product</button>
+        </div>
+
     </form>
-
-
-    <table class="table table-hover align-middle text-center">
-        <thead class="table-dark">
-        <tr>
-            <th>ID</th>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Store</th>
-            <th>Status</th>
-            <th>Price</th>
-            <th>Created at</th>
-            <th colspan="2">Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php $number = 1 ?>
-        @forelse($products as $product)
-            <tr>
-                <td>{{$number++}}</td>
-
-                {{-- Image --}}
-                <td>
-                    @if($product->image)
-                        <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" width="60"
-                             class="img-thumbnail">
-                    @else
-                        <span class="text-muted">No image</span>
-                    @endif
-                </td>
-
-                <td>{{ $product->name }}</td>
-
-                <td>
-                    @if($product->category)
-                        <span class="badge bg-info">{{ $product->category->name }}</span>
-                    @else
-                        <span class="badge bg-secondary">Primary</span>
-                    @endif
-                </td>
-
-                <td>
-                    @if($product->store)
-                        <span class="badge bg-info">{{ $product->store->name }}</span>
-                    @else
-                        <span class="badge bg-secondary">Primary</span>
-                    @endif
-                </td>
-
-                @php
-                $badgeClass = match ($product->status){
-                    'active' => 'bg-success',
-                    'draft' => 'bg-warning',
-                    'archived' => 'bg-danger',
-                };
-                    @endphp
-                <td>
-                    <span class="badge {{ $badgeClass  }}">
-                        {{ ucfirst($product->status) }}
-                    </span>
-                </td>
-
-                <td> {{$product->price}}</td>
-
-                <td>{{ $product->created_at->format('Y-m-d') }}</td>
-
-                <td>
-                    <a href="{{route('dashboard.products.edit',$product->id)}}" class="btn btn-sm btn-outline-success">
-                        Edit
-                    </a>
-                </td>
-
-                <td>
-                    <form method="POST" action="{{route('dashboard.products.destroy',$product->id)}}"
-                          onsubmit="return confirm('Are you sure you want to delete this product?')">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
-                    </form>
-                </td>
-            </tr>
-        @empty
-            <tr>
-                <td colspan="9" class="text-muted">No products found.</td>
-            </tr>
-        @endforelse
-        </tbody>
-    </table>
-
-    {{--    {{$products->links()}}--}}
-
-    {{-- we have to use that code because if there is any date in a second page when we click next page the search still working   --}}
-    {{ $products->appends(request()->query())->links() }}
 
 
     <!--begin::App Content-->
@@ -260,11 +219,12 @@
                             More info <i class="bi bi-link-45deg"></i>
                         </a>
                     </div>
-
                     <!--end::Small Box Widget 4-->
+
                 </div>
                 <!--end::Col-->
             </div>
+
             <!-- /.row (main row) -->
         </div>
         <!--end::Container-->

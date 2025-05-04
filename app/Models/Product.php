@@ -11,19 +11,35 @@ class Product extends Model
 {
 
     use HasFactory, softDeletes;
+
     protected $guarded = [];
 
 
-    public function category(){
+    protected static function booted()
+    {
+        static::addGlobalScope(new StoreScope());
+    }
+
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
 
-    public function store(){
+    public function store()
+    {
         return $this->belongsTo(Store::class);
     }
 
-    protected static function booted(){
-       static::addGlobalScope(new StoreScope());
+    public function tags()
+    {
+        return $this->belongsToMany(
+            Tag::class,     // Related Model
+            'product_tag',      // Pivot Table name
+            'product_id',       // FK in pivot table for the current model
+            'tag_id',       // FK in pivot table for the related model
+            'id',           // PK current model
+            'id',           // PK related model
+        );
     }
 
 

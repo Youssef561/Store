@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use App\Models\Scopes\StoreScope;
+use App\Rules\Filter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class Product extends Model
 {
@@ -43,6 +46,23 @@ class Product extends Model
         );
     }
 
+    public static function rules($id = 0){
+
+        return [
+            //'name' => 'required|min:4|unique:products,name,' . $id,           // That tells Laravel to ignore the current record's name during the uniqueness check.
+            'name' =>  ['required', 'min:3', 'max:255',
+                Rule::unique('products', 'name')->ignore($id),
+                new Filter(),
+            ],
+
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'description' => 'required|string|max:255|min:3',
+            'price' => 'required|numeric|min:0',
+            'status' => 'required|in:active,draft,archived',
+            'tags' => 'nullable',
+        ];
+
+    }
 
     public function scopeFilter(Builder $builder , $filters){
 
@@ -65,5 +85,34 @@ class Product extends Model
 //        }
 
     }
+
+    public function scopeActive(Builder $builder){
+        $builder->where('status','=','active');
+    }
+
+    // Accessors
+    public function getImageUrlAttribute()
+    {
+        if(!$this->image) {
+            return 'https://www.incathlab.com/images/products/default_product.png';
+        }
+
+        if (Str::startsWith($this->image, ['http://','https://'])) {
+            return $this->image;
+        }
+
+        return asset('storage/' . $this->image);        // if we are not use laravel storage, then we have to remove 'storage'
+    }
+
+    public function getSalePercentAttribute()
+    {
+        if (!$this->compare_price || $this->compare_price == 0) {
+            return 0;
+        }
+
+        $discount = $this->compare_price - $this->price;
+        return round(($discount / $this->compare_price) * 100,1);
+    }
+
 
 }

@@ -16,7 +16,7 @@ class StoreScope implements Scope
     {
         // Global scope
         $user = Auth::user();
-        if ($user->store_id) {           // if a user has store id apply this query if no, so he is admin and can view all products
+        if ($user && $user->store_id) {           // if a user has store id apply this query if no, so he is admin and can view all products
             $builder->where('store_id', '=', $user->store_id);
         }
     }

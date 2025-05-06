@@ -66,7 +66,7 @@
                 {{-- Image --}}
                 <td>
                     @if($product->image)
-                        <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" width="60"
+                        <img src="{{ $product->image_url }}" alt="{{ $product->name }}" width="60"
                              class="img-thumbnail">
                     @else
                         <span class="text-muted">No image</span>

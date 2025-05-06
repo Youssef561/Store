@@ -112,7 +112,6 @@ class CategoriesController extends Controller
 
 
 
-    // Inside your Controller
     protected function uploadImage($request, $existingImage = null)
     {
         // Check if the request has a file

@@ -16,8 +16,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 
 
-    Route::get('/dashboard/index', [DashboardController::class, 'index'])->name('dashboard.index');
-
                             // Category Trash
     Route::get('categories/trash', [CategoriesController::class, 'trash'])->name('categories.trash');
     Route::put('categories/{category}/restore', [CategoriesController::class, 'restore'])->name('categories.restore');

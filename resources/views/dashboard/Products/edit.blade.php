@@ -63,7 +63,7 @@
         {{-- Product Tags --}}
         <div class="mb-3">
             <label for="name" class="form-label">Product Tags</label>
-            <input type="text" name="tags" id="tags" class="form-control" value="{{ old('tags',$tags) }}" required>
+            <input type="text" name="tags" id="tags" class="form-control" value="{{ old('tags',$tags) }}">
         </div>
 
         {{-- Status --}}

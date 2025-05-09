@@ -9,9 +9,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::middleware(['auth','auth.type:super-admin,admin'])->group(function () {      // we can pass more than one parameter to the middleware auth.type
 
-Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
-Route::get('/products/{product:slug}', [ProductsController::class, 'show'])->name('products.show');         // laravel automaticly deal with id and we want to deal with slug so we used :slug to let laravel know that is slug no id
+    Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
+    Route::get('/products/{product:slug}', [ProductsController::class, 'show'])->name('products.show');         // laravel automaticly deal with id and we want to deal with slug so we used :slug to let laravel know that is slug no id
+
+});
+
 
 //      we defined the profile in dashboard.php
 //Route::middleware('auth')->group(function () {

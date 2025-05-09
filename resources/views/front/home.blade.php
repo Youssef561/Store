@@ -1,4 +1,9 @@
-<x-front-layout>
+<x-front-layout title="Home">
+
+    <x-slot:breadcrumb>
+        <!-- Breadcrumb content -->
+    </x-slot:breadcrumb>
+
 
     <!-- Start Hero Area -->
     <section class="hero-area">
@@ -19,7 +24,7 @@
                                         labore dolore magna aliqua.</p>
                                     <h3><span>Now Only</span> $320.99</h3>
                                     <div class="button">
-                                        <a href="product-grids.html" class="btn">Shop Now</a>
+                                        <a href="" class="btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -35,7 +40,7 @@
                                         labore dolore magna aliqua.</p>
                                     <h3><span>Combo Only:</span> $590.00</h3>
                                     <div class="button">
-                                        <a href="product-grids.html" class="btn">Shop Now</a>
+                                        <a href="#" class="btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +72,7 @@
                                     <h2>Weekly Sale!</h2>
                                     <p>Saving up to 50% off all online store items this week.</p>
                                     <div class="button">
-                                        <a class="btn" href="product-grids.html">Shop Now</a>
+                                        <a class="btn" href="#">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -98,11 +103,11 @@
                     <div class="single-category">
                         <h3 class="heading">TV & Audios</h3>
                         <ul>
-                            <li><a href="product-grids.html">Smart Television</a></li>
-                            <li><a href="product-grids.html">QLED TV</a></li>
-                            <li><a href="product-grids.html">Audios</a></li>
-                            <li><a href="product-grids.html">Headphones</a></li>
-                            <li><a href="product-grids.html">View All</a></li>
+                            <li><a href="#">Smart Television</a></li>
+                            <li><a href="#">QLED TV</a></li>
+                            <li><a href="#">Audios</a></li>
+                            <li><a href="#">Headphones</a></li>
+                            <li><a href="#">View All</a></li>
                         </ul>
                         <div class="images">
                             <img src="https://via.placeholder.com/180x180" alt="#">
@@ -115,11 +120,11 @@
                     <div class="single-category">
                         <h3 class="heading">Desktop & Laptop</h3>
                         <ul>
-                            <li><a href="product-grids.html">Smart Television</a></li>
-                            <li><a href="product-grids.html">QLED TV</a></li>
-                            <li><a href="product-grids.html">Audios</a></li>
-                            <li><a href="product-grids.html">Headphones</a></li>
-                            <li><a href="product-grids.html">View All</a></li>
+                            <li><a href="#">Smart Television</a></li>
+                            <li><a href="#">QLED TV</a></li>
+                            <li><a href="#">Audios</a></li>
+                            <li><a href="#">Headphones</a></li>
+                            <li><a href="#">View All</a></li>
                         </ul>
                         <div class="images">
                             <img src="https://via.placeholder.com/180x180" alt="#">
@@ -132,11 +137,11 @@
                     <div class="single-category">
                         <h3 class="heading">Cctv Camera</h3>
                         <ul>
-                            <li><a href="product-grids.html">Smart Television</a></li>
-                            <li><a href="product-grids.html">QLED TV</a></li>
-                            <li><a href="product-grids.html">Audios</a></li>
-                            <li><a href="product-grids.html">Headphones</a></li>
-                            <li><a href="product-grids.html">View All</a></li>
+                            <li><a href="#">Smart Television</a></li>
+                            <li><a href="#">QLED TV</a></li>
+                            <li><a href="#">Audios</a></li>
+                            <li><a href="#">Headphones</a></li>
+                            <li><a href="#">View All</a></li>
                         </ul>
                         <div class="images">
                             <img src="https://via.placeholder.com/180x180" alt="#">
@@ -149,11 +154,11 @@
                     <div class="single-category">
                         <h3 class="heading">Dslr Camera</h3>
                         <ul>
-                            <li><a href="product-grids.html">Smart Television</a></li>
-                            <li><a href="product-grids.html">QLED TV</a></li>
-                            <li><a href="product-grids.html">Audios</a></li>
-                            <li><a href="product-grids.html">Headphones</a></li>
-                            <li><a href="product-grids.html">View All</a></li>
+                            <li><a href="#">Smart Television</a></li>
+                            <li><a href="#">QLED TV</a></li>
+                            <li><a href="#">Audios</a></li>
+                            <li><a href="#">Headphones</a></li>
+                            <li><a href="#">View All</a></li>
                         </ul>
                         <div class="images">
                             <img src="https://via.placeholder.com/180x180" alt="#">
@@ -166,11 +171,11 @@
                     <div class="single-category">
                         <h3 class="heading">Smart Phones</h3>
                         <ul>
-                            <li><a href="product-grids.html">Smart Television</a></li>
-                            <li><a href="product-grids.html">QLED TV</a></li>
-                            <li><a href="product-grids.html">Audios</a></li>
-                            <li><a href="product-grids.html">Headphones</a></li>
-                            <li><a href="product-grids.html">View All</a></li>
+                            <li><a href="#">Smart Television</a></li>
+                            <li><a href="#">QLED TV</a></li>
+                            <li><a href="#">Audios</a></li>
+                            <li><a href="#">Headphones</a></li>
+                            <li><a href="#">View All</a></li>
                         </ul>
                         <div class="images">
                             <img src="https://via.placeholder.com/180x180" alt="#">
@@ -183,11 +188,11 @@
                     <div class="single-category">
                         <h3 class="heading">Game Console</h3>
                         <ul>
-                            <li><a href="product-grids.html">Smart Television</a></li>
-                            <li><a href="product-grids.html">QLED TV</a></li>
-                            <li><a href="product-grids.html">Audios</a></li>
-                            <li><a href="product-grids.html">Headphones</a></li>
-                            <li><a href="product-grids.html">View All</a></li>
+                            <li><a href="#">Smart Television</a></li>
+                            <li><a href="#">QLED TV</a></li>
+                            <li><a href="#">Audios</a></li>
+                            <li><a href="#">Headphones</a></li>
+                            <li><a href="#">View All</a></li>
                         </ul>
                         <div class="images">
                             <img src="https://via.placeholder.com/180x180" alt="#">
@@ -235,7 +240,7 @@
                             <h2>Smart Watch 2.0</h2>
                             <p>Space Gray Aluminum Case with <br>Black/Volt Real Sport Band </p>
                             <div class="button">
-                                <a href="product-grids.html" class="btn">View Details</a>
+                                <a href="#" class="btn">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -248,7 +253,7 @@
                             <p>Lorem ipsum dolor sit amet, <br>eiusmod tempor
                                 incididunt ut labore.</p>
                             <div class="button">
-                                <a href="product-grids.html" class="btn">Shop Now</a>
+                                <a href="#" class="btn">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -279,14 +284,14 @@
                                 <div class="product-image">
                                     <img src="https://via.placeholder.com/335x335" alt="#">
                                     <div class="button">
-                                        <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
+                                        <a href="#" class="btn"><i class="lni lni-cart"></i> Add to
                                             Cart</a>
                                     </div>
                                 </div>
                                 <div class="product-info">
                                     <span class="category">Camera</span>
                                     <h4 class="title">
-                                        <a href="product-grids.html">WiFi Security Camera</a>
+                                        <a href="#">WiFi Security Camera</a>
                                     </h4>
                                     <ul class="review">
                                         <li><i class="lni lni-star-filled"></i></li>
@@ -309,14 +314,14 @@
                                 <div class="product-image">
                                     <img src="https://via.placeholder.com/335x335" alt="#">
                                     <div class="button">
-                                        <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
+                                        <a href="#" class="btn"><i class="lni lni-cart"></i> Add to
                                             Cart</a>
                                     </div>
                                 </div>
                                 <div class="product-info">
                                     <span class="category">Laptop</span>
                                     <h4 class="title">
-                                        <a href="product-grids.html">Apple MacBook Air</a>
+                                        <a href="#">Apple MacBook Air</a>
                                     </h4>
                                     <ul class="review">
                                         <li><i class="lni lni-star-filled"></i></li>
@@ -339,14 +344,14 @@
                                 <div class="product-image">
                                     <img src="https://via.placeholder.com/335x335" alt="#">
                                     <div class="button">
-                                        <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
+                                        <a href="#" class="btn"><i class="lni lni-cart"></i> Add to
                                             Cart</a>
                                     </div>
                                 </div>
                                 <div class="product-info">
                                     <span class="category">Speaker</span>
                                     <h4 class="title">
-                                        <a href="product-grids.html">Bluetooth Speaker</a>
+                                        <a href="#">Bluetooth Speaker</a>
                                     </h4>
                                     <ul class="review">
                                         <li><i class="lni lni-star-filled"></i></li>
@@ -375,7 +380,7 @@
                                 <span>$590.00</span>
                             </div>
                             <div class="button">
-                                <a href="product-grids.html" class="btn">Shop Now</a>
+                                <a href="#" class="btn">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -388,7 +393,7 @@
                             <span class="sale-tag">-50%</span>
                         </div>
                         <div class="text">
-                            <h2><a href="product-grids.html">Bluetooth Headphone</a></h2>
+                            <h2><a href="#">Bluetooth Headphone</a></h2>
                             <ul class="review">
                                 <li><i class="lni lni-star-filled"></i></li>
                                 <li><i class="lni lni-star-filled"></i></li>
@@ -441,11 +446,11 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
+                            <a href="#"><img src="https://via.placeholder.com/100x100" alt="#"></a>
                         </div>
                         <div class="list-info">
                             <h3>
-                                <a href="product-grids.html">GoPro Hero4 Silver</a>
+                                <a href="#">GoPro Hero4 Silver</a>
                             </h3>
                             <span>$287.99</span>
                         </div>
@@ -454,11 +459,11 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
+                            <a href="#"><img src="https://via.placeholder.com/100x100" alt="#"></a>
                         </div>
                         <div class="list-info">
                             <h3>
-                                <a href="product-grids.html">Puro Sound Labs BT2200</a>
+                                <a href="#">Puro Sound Labs BT2200</a>
                             </h3>
                             <span>$95.00</span>
                         </div>
@@ -467,11 +472,11 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
+                            <a href="#"><img src="https://via.placeholder.com/100x100" alt="#"></a>
                         </div>
                         <div class="list-info">
                             <h3>
-                                <a href="product-grids.html">HP OfficeJet Pro 8710</a>
+                                <a href="#">HP OfficeJet Pro 8710</a>
                             </h3>
                             <span>$120.00</span>
                         </div>
@@ -483,11 +488,11 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
+                            <a href="#"><img src="https://via.placeholder.com/100x100" alt="#"></a>
                         </div>
                         <div class="list-info">
                             <h3>
-                                <a href="product-grids.html">iPhone X 256 GB Space Gray</a>
+                                <a href="#">iPhone X 256 GB Space Gray</a>
                             </h3>
                             <span>$1150.00</span>
                         </div>
@@ -496,11 +501,11 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
+                            <a href="#"><img src="https://via.placeholder.com/100x100" alt="#"></a>
                         </div>
                         <div class="list-info">
                             <h3>
-                                <a href="product-grids.html">Canon EOS M50 Mirrorless Camera</a>
+                                <a href="#">Canon EOS M50 Mirrorless Camera</a>
                             </h3>
                             <span>$950.00</span>
                         </div>
@@ -509,11 +514,11 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
+                            <a href="#"><img src="https://via.placeholder.com/100x100" alt="#"></a>
                         </div>
                         <div class="list-info">
                             <h3>
-                                <a href="product-grids.html">Microsoft Xbox One S</a>
+                                <a href="#">Microsoft Xbox One S</a>
                             </h3>
                             <span>$298.00</span>
                         </div>
@@ -525,11 +530,11 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
+                            <a href="#"><img src="https://via.placeholder.com/100x100" alt="#"></a>
                         </div>
                         <div class="list-info">
                             <h3>
-                                <a href="product-grids.html">Samsung Gear 360 VR Camera</a>
+                                <a href="#">Samsung Gear 360 VR Camera</a>
                             </h3>
                             <span>$68.00</span>
                         </div>
@@ -538,11 +543,11 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
+                            <a href="#"><img src="https://via.placeholder.com/100x100" alt="#"></a>
                         </div>
                         <div class="list-info">
                             <h3>
-                                <a href="product-grids.html">Samsung Galaxy S9+ 64 GB</a>
+                                <a href="#">Samsung Galaxy S9+ 64 GB</a>
                             </h3>
                             <span>$840.00</span>
                         </div>
@@ -551,11 +556,11 @@
                     <!-- Start Single List -->
                     <div class="single-list">
                         <div class="list-image">
-                            <a href="product-grids.html"><img src="https://via.placeholder.com/100x100" alt="#"></a>
+                            <a href="#"><img src="https://via.placeholder.com/100x100" alt="#"></a>
                         </div>
                         <div class="list-info">
                             <h3>
-                                <a href="product-grids.html">Zeus Bluetooth Headphones</a>
+                                <a href="#">Zeus Bluetooth Headphones</a>
                             </h3>
                             <span>$28.00</span>
                         </div>
@@ -624,14 +629,14 @@
                     <!-- Start Single Blog -->
                     <div class="single-blog">
                         <div class="blog-img">
-                            <a href="blog-single-sidebar.html">
+                            <a href="#">
                                 <img src="https://via.placeholder.com/370x215" alt="#">
                             </a>
                         </div>
                         <div class="blog-content">
                             <a class="category" href="javascript:void(0)">eCommerce</a>
                             <h4>
-                                <a href="blog-single-sidebar.html">What information is needed for shipping?</a>
+                                <a href="#">What information is needed for shipping?</a>
                             </h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt.</p>
@@ -646,14 +651,14 @@
                     <!-- Start Single Blog -->
                     <div class="single-blog">
                         <div class="blog-img">
-                            <a href="blog-single-sidebar.html">
+                            <a href="#">
                                 <img src="https://via.placeholder.com/370x215" alt="#">
                             </a>
                         </div>
                         <div class="blog-content">
                             <a class="category" href="javascript:void(0)">Gaming</a>
                             <h4>
-                                <a href="blog-single-sidebar.html">Interesting fact about gaming consoles</a>
+                                <a href="#">Interesting fact about gaming consoles</a>
                             </h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                 incididunt.</p>
@@ -668,14 +673,14 @@
                     <!-- Start Single Blog -->
                     <div class="single-blog">
                         <div class="blog-img">
-                            <a href="blog-single-sidebar.html">
+                            <a href="#">
                                 <img src="https://via.placeholder.com/370x215" alt="#">
                             </a>
                         </div>
                         <div class="blog-content">
                             <a class="category" href="javascript:void(0)">Electronic</a>
                             <h4>
-                                <a href="blog-single-sidebar.html">Electronics, instrumentation & control engineering
+                                <a href="#">Electronics, instrumentation & control engineering
                                 </a>
                             </h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -792,7 +797,7 @@
             let diff = finaleDate - now;
             if (diff < 0) {
                 document.querySelector('.alert').style.display = 'block';
-                document.querySelector('.container').style.display = 'none';
+                //document.querySelector('.container').style.display = 'none';
             }
 
             let days = Math.floor(diff / (1000 * 60 * 60 * 24));

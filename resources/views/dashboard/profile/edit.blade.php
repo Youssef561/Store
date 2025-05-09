@@ -108,6 +108,15 @@
         </div>
     </form>
 
+    <div class="d-flex justify-content-center">
+        <span class="fw-bold me-1">Last Active:</span>
+        @if($user->last_active_at)
+            <span>{{ $user->last_active_at->format('F j, Y \a\t g:i A') }}</span>
+        @else
+            <span class="text-muted">Never active</span>
+        @endif
+    </div>
+
 
     </main>
 

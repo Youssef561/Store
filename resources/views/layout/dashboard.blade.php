@@ -309,13 +309,13 @@
                             <li class="nav-item">
                                 <a href="{{route('dashboard.categories.index')}}" class="nav-link ">
                                     <i class="nav-icon bi bi-circle"></i>
-                                    <p>Dashboard v1</p>
+                                    <p> Categories </p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{route('dashboard.products.index')}}" class="nav-link">
                                     <i class="nav-icon bi bi-circle"></i>
-                                    <p>Dashboard v2</p>
+                                    <p> Products </p>
                                 </a>
                             </li>
                             <li class="nav-item">

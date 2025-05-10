@@ -20,4 +20,5 @@ class StoreScope implements Scope
             $builder->where('store_id', '=', $user->store_id);
         }
     }
+
 }

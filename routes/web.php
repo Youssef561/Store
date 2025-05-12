@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\Front\CartController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ProductsController;
 use App\Http\Controllers\ProfileController;
@@ -13,6 +14,8 @@ Route::middleware(['auth','auth.type:super-admin,admin'])->group(function () {  
 
     Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
     Route::get('/products/{product:slug}', [ProductsController::class, 'show'])->name('products.show');         // laravel automaticly deal with id and we want to deal with slug so we used :slug to let laravel know that is slug no id
+
+    Route::resource('cart', CartController::class);
 
 });
 

@@ -1,9 +1,4 @@
-<x-front-layout title="Home">
-
-    <x-slot:breadcrumb>
-        <!-- Breadcrumb content -->
-    </x-slot:breadcrumb>
-
+<x-front-layout>
 
     <!-- Start Hero Area -->
     <section class="hero-area">

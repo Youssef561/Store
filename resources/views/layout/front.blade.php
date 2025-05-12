@@ -2,19 +2,19 @@
 <html class="no-js" lang="zxx">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <title>{{ $title }}</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon.svg')}}" />
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon.svg')}}"/>
 
     <!-- ========================= CSS here ========================= -->
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/LineIcons.3.0.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/tiny-slider.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/glightbox.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/css/LineIcons.3.0.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/css/tiny-slider.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/css/glightbox.min.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}"/>
 
     @stack('styles')
 </head>
@@ -79,7 +79,7 @@
                 <div class="col-lg-4 col-md-4 col-12">
                     <div class="top-middle">
                         <ul class="useful-links">
-                            <li><a href="{{route('dashboard.categories.index')}}">Home</a></li>
+                            <li><a href="{{route('home')}}">Home</a></li>
                             <li><a href="about-us.html">About Us</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul>
@@ -89,7 +89,9 @@
                     <div class="top-end">
                         <div class="user">
                             <i class="lni lni-user"></i>
-                            Hello
+                            @if(Auth::user())
+                                {{Auth::user()->name}}
+                            @endif
                         </div>
                         <ul class="user-login">
                             <li>
@@ -176,7 +178,8 @@
                                                     class="lni lni-close"></i></a>
                                             <div class="cart-img-head">
                                                 <a class="cart-img" href="product-details.html"><img
-                                                        src="{{asset('assets/images/header/cart-items/item1.jpg')}}" alt="#"></a>
+                                                        src="{{asset('assets/images/header/cart-items/item1.jpg')}}"
+                                                        alt="#"></a>
                                             </div>
 
                                             <div class="content">
@@ -190,7 +193,8 @@
                                                     class="lni lni-close"></i></a>
                                             <div class="cart-img-head">
                                                 <a class="cart-img" href="product-details.html"><img
-                                                        src="{{asset('assets/images/header/cart-items/item2.jpg')}}" alt="#"></a>
+                                                        src="{{asset('assets/images/header/cart-items/item2.jpg')}}"
+                                                        alt="#"></a>
                                             </div>
                                             <div class="content">
                                                 <h4><a href="product-details.html">Wi-Fi Smart Camera</a></h4>
@@ -204,7 +208,7 @@
                                             <span class="total-amount">$134.00</span>
                                         </div>
                                         <div class="button">
-                                            <a href="checkout.html" class="btn animate">Checkout</a>
+                                            <a href="{{route('cart.index')}}" class="btn animate">Checkout</a>
                                         </div>
                                     </div>
                                 </div>

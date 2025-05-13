@@ -90,9 +90,10 @@ class Product extends Model
         $builder->where('status','=','active');
     }
 
-    // Accessors
+                        // Accessors
     public function getImageUrlAttribute()
     {
+        // if there is no image set this image
         if(!$this->image) {
             return 'https://www.incathlab.com/images/products/default_product.png';
         }

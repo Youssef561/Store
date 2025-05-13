@@ -10,7 +10,7 @@ class Profile extends Model
 
     use HasFactory;
 
-    protected $primaryKey = 'user_id';              // we added this code caz there is no id on this table there is only user_id which is primary key and also foreign key
+    protected $primaryKey = 'user_id';              // we added this code caz there is no id on this table there is only user_id which is the primary key and also foreign key
 
     protected $fillable = [
         'user_id',

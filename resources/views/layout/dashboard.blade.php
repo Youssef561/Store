@@ -298,7 +298,7 @@
                     data-accordion="false"
                 >
                     <li class="nav-item menu-open">
-                        <a href="#" class="nav-link active">
+                        <a href="#" class="nav-link @yield('dashboard-menu-active')">
                             <i class="nav-icon bi bi-speedometer"></i>
                             <p>
                                 Dashboard
@@ -307,19 +307,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{route('dashboard.categories.index')}}" class="nav-link ">
+                                <a href="{{route('dashboard.categories.index')}}" class="nav-link @yield('categories-active')">
                                     <i class="nav-icon bi bi-circle"></i>
                                     <p> Categories </p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('dashboard.products.index')}}" class="nav-link">
+                                <a href="{{route('dashboard.products.index')}}" class="nav-link @yield('products-active')">
                                     <i class="nav-icon bi bi-circle"></i>
                                     <p> Products </p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('home')}}" class="nav-link">
+                                <a href="{{route('home')}}" class="nav-link @yield('home-active')">
                                     <i class="nav-icon bi bi-circle"></i>
                                     <p>Dashboard v3</p>
                                 </a>

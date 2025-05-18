@@ -1,16 +1,37 @@
+// Remove this wrapper:
+// (function($) { ... })(jQuery);
 
-(function($) {
-    $('.item-quantity').on('change', function(e) {
-
+// Use this instead:
+$(document).ready(function() {
+    // Update quantity
+    $(document).on('change', '.item-quantity', function(e) {
         $.ajax({
-            url: "/cart/" + $(this).data('id'),     // data->id
-            method: 'put',
+            url: `/cart/${$(this).data('id')}`,
+            method: 'PUT',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
             data: {
-                quantity: $(this).val(),
-                _token: csrf_token
+                quantity: $(this).val()
+            },
+            success: () => {
+                window.location.reload(); // Force refresh to get updated data
             }
         });
-
     });
 
-})(jQuery);
+    // Remove item
+    $(document).on('click', '.remove-item', function(e) {
+        let id = $(this).data('id');
+        $.ajax({
+            url: `/cart/${id}`,
+            method: 'DELETE',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success: response => {
+                $(`#${id}`).remove();
+            }
+        });
+    });
+});

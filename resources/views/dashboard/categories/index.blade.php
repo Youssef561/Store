@@ -1,5 +1,8 @@
 @extends('layout/dashboard');
 
+@section('categories-active', 'active')
+@section('dashboard-menu-open', 'menu-open')
+
 @section('title','Categories')
 
 @section('breadcrumb')

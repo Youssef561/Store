@@ -22,7 +22,7 @@ class CartModelRepository implements CartRepository
 
     public function get() : Collection
     {
-        // using this construct, now we create only 1 query instead of creating the same query every time in every request
+        // using the construct, now we create only 1 query instead of creating the same query every time in every request
        if (!$this->item->count()) {
            $this->item = Cart::with('product')->get();
        }
@@ -41,6 +41,7 @@ class CartModelRepository implements CartRepository
                 'quantity' => $quantity,
             ]);
             $this->item->push($cart);
+            return $cart;
         }
 
         return $item->increment('quantity', $quantity);

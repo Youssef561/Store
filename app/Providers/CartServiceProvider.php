@@ -13,9 +13,6 @@ class CartServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-//        $this->app->bind('cart', function () {
-//            return new CartModelRepository();
-//        });
 
         $this->app->bind(CartRepository::class, CartModelRepository::class);
 
@@ -28,4 +25,5 @@ class CartServiceProvider extends ServiceProvider
     {
         //
     }
+
 }

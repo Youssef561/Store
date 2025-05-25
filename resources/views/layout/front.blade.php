@@ -93,6 +93,8 @@
                                 {{Auth::user()->name}}
                             @endif
                         </div>
+
+                        @guest
                         <ul class="user-login">
                             <li>
                                 <a href="{{route('login')}}">Sign In</a>
@@ -101,6 +103,7 @@
                                 <a href="{{route('register')}}">Register</a>
                             </li>
                         </ul>
+                        @endguest
                     </div>
                 </div>
             </div>

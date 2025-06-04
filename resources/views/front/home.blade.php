@@ -232,7 +232,7 @@
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="single-banner" style="background-image:url('https://via.placeholder.com/620x340')">
                         <div class="content">
-                            <h2>Smart Watch 2.0</h2>
+                            <h2>Smartwatch 2.0</h2>
                             <p>Space Gray Aluminum Case with <br>Black/Volt Real Sport Band </p>
                             <div class="button">
                                 <a href="#" class="btn">View Details</a>

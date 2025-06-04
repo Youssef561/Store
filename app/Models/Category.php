@@ -24,7 +24,8 @@ class Category extends Model
     ];
 
 
-    public function scopeActive(Builder $builder){
+    public function scopeActive(Builder $builder): void
+    {
         $builder->where('status','=','active');
     }
 

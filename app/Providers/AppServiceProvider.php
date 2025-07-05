@@ -22,6 +22,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // testing
+        //ini_set('max_execution_time',300);
         Paginator::useBootstrapFive();          // for pagination
     }
 }

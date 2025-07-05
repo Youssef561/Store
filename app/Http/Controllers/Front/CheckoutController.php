@@ -18,7 +18,13 @@ class CheckoutController extends Controller
     public function store(Request $request, CartRepository $cart)
     {
 
+        // validation for array input
         $request->validate([
+            'addr.billing.first_name' => ['required','string','max:250'],
+            'addr.billing.last_name' => ['required','string','max:250'],
+            'addr.billing.email' => ['required','string','max:250'],
+            'addr.billing.phone_number' => ['required','string','max:250'],
+            'addr.billing.city' => ['required','string','max:250'],
         ]);
 
         $items = $cart->get()->groupBy('product.store_id')->all();          // product.store_id is a relation in cart model
@@ -57,7 +63,7 @@ class CheckoutController extends Controller
             DB::rollBack();
             throw $e;
         }
-        return redirect()->route('home');
+        return redirect()->route('checkout');
     }
 
     public function create(CartRepository $cart)

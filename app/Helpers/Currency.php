@@ -20,5 +20,6 @@ class Currency
             $currency = config('app.currency', 'USD');
         }
         return $formatter->formatCurrency($amount, $currency);
+
     }
 }

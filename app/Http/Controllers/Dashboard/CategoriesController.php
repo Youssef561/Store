@@ -124,7 +124,7 @@ class CategoriesController extends Controller
 
             // Handle the new image upload
             $image = $request->file('image');
-            $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension(); // Adding a unique ID for extra safety
+            $imageName = time() . '_' . uniqid('', true) . '.' . $image->getClientOriginalExtension(); // Adding a unique ID for extra safety
             $image->move(public_path('uploads/categories'), $imageName);
 
             // Return the path to the uploaded image

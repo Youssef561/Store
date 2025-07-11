@@ -86,6 +86,7 @@ class Product extends Model
 
     }
 
+
     public function scopeActive(Builder $builder){
         $builder->where('status','=','active');
     }
@@ -115,5 +116,36 @@ class Product extends Model
         return round(($discount / $this->compare_price) * 100,1);
     }
 
+    public function scopeFilterr(Builder $builder, $filters)
+    {
+        $options = array_merge([
+           'store_id' => null,
+           'category_id' => null,
+           'tag_id' => null,
+           'status' => 'active',
+        ], $filters);
+
+        $builder->when($options['status'], function ($query, $status){
+            return $query->where('status', $status);
+        });
+
+        $builder->when($options['store_id'], function ($builder, $value){
+           $builder->where('store_id', $value);
+        });
+        $builder->when($options['category_id'], function ($builder, $value){
+            $builder->where('category_id', $value);
+        });
+
+        $value = null;
+        $builder->whereExists(function ($query) use ($value){
+           $query->select(1)
+           ->from('product_tag')
+           ->whereRaw('product_id = products.id')
+           ->where('tag_id', $value);
+        });
+
+        //$builder->whereRaw('id IN (SELECT product_id FROM product_tag WHERE tag_id = ?)', [$value]);
+
+    }
 
 }
